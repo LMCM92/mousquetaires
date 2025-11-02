@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Les Mousquetaires - Contact</title>
+  <!-- Font Awesome pour les icônes -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+  /* Reset global */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      color: #333;
+      background-image: url("8.jpg");
+      background-size: cover;
+      background-position: center 40%;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      position: relative;
+      z-index: 0;
+    }
+
+    /* Voile blanc pour lisibilité */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(255,255,255,0.6);
+      z-index: -1;
+    }
+
+    /* Header */
+header {
+  background-color: #003366; /* Bleu navy */
+  color: white;
+  padding: 20px;
+  text-align: center;
+  margin: 0; /* supprime tout décalage éventuel */
+}
+
+header h1 {
+  font-size: 3em;
+  margin: 0; /* supprime le décalage du h1 */
+}
+
+
+    /* Navigation */
+   nav {
+  background-color: #ffcc00; /* Jaune */
+  text-align: center;
+  padding: 0;               /* on enlève les variations */
+  margin: 0;                /* on force à rester collé */
+  height: 60px;             /* même hauteur partout */
+  line-height: 60px;        /* centre verticalement */
+}
+
+nav a {
+  color: #003366; /* Bleu navy */
+  text-decoration: none;
+  padding: 0 20px;          /* espace entre les liens */
+  font-size: 1.1em;
+  font-weight: bold;
+  display: inline-block;
+  height: 100%;             /* occupe toute la bande */
+}
+
+nav a:hover {
+  background-color: #003366;
+  color: #ffcc00;
+}
+ /* Hero */
+    .hero {
+      text-align: center;
+      padding: 120px 20px;
+      color: white;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+      background: rgba(0,0,0,0.4);
+    }
+    .hero h2 { font-size: 3.5em; margin: 0 0 20px; text-transform: uppercase; }
+
+
+    /* Bannière recrutement */
+    .banner {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      background-image: url('https://images.unsplash.com/photo-1521412644187-c49fa049e84d?auto=format&fit=crop&w=1600&q=80'); /* Image libre sportive */
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+      padding: 20px;
+    }
+    .banner h1 {
+      font-size: 3.5em;
+      margin: 0;
+      text-transform: uppercase;
+    }
+    .banner p {
+      font-size: 1.3em;
+      margin: 15px 0;
+    }
+    .cta-button {
+      background-color: #ffcc00;
+      color: #003366;
+      padding: 15px 30px;
+      font-size: 1.2em;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 5px;
+      display: inline-block;
+      margin-top: 20px;
+      transition: 0.3s;
+    }
+    .cta-button:hover {
+      background-color: #ffaa00;
+    }
+
+
+    .container {
+      padding: 50px 20px;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .contact-card {
+      flex: 1 1 300px;
+      max-width: 350px;
+      min-height: 250px;
+      background-color: white;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 12px;
+      padding: 25px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .contact-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+    }
+
+    .contact-card h3 {
+      color: #003366;
+      font-size: 1.4em;
+      margin-bottom: 15px;
+    }
+
+    .contact-card p, .contact-card a {
+      font-size: 1.1em;
+      margin: 8px 0;
+      color: #333;
+      text-decoration: none;
+      display: block;
+    }
+
+    .social-links a {
+      display: inline-block;
+      margin: 10px;
+      font-size: 2em;
+      color: #003366;
+      transition: 0.3s;
+    }
+
+    .social-links a:hover {
+      color: #ffcc00;
+      transform: scale(1.2);
+    }
+
+    .map-container {
+      width: 100%;
+      height: 250px;
+      border-radius: 12px;
+      overflow: hidden;
+      margin-top: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    footer {
+      background-color: #003366;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 50px;
+    }
+    
+    footer a {
+      color: #ffcc00;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>Les Mousquetaires</h1>
+  </header>
+
+    <!-- Navigation -->
+<nav>
+    <a href="ACCUEIL MOUS.html">Accueil</a> 
+    <a href="A PROPOS MOUS.html">À propos</a>
+    <a href="EQUIPES.html">Équipe</a>
+    <a href="CALENDRIER.html">Calendrier</a>
+    <a href="NOUS REJOINDRE.html">Nous rejoindre</a>
+    <a href="BOUTIQUE.html">Boutique</a>
+    <a href="CONTACT.html">Contact</a>
+  </nav>
+
+    <!-- Hero -->
+  <section class="hero">
+    <h2>ENVOIE NOUS UN MESSAGE OU VIENS NOUS RETROUVER</h2>
+      <h1></h1>
+      <p></p>
+      <a></a>
+    </div>
+  </section>
+  <!-- Contact Section -->
+  <div class="container">
+
+    <!-- Coordonnées -->
+    <div class="contact-card">
+      <h3>📩 Nos coordonnées</h3>
+      <p><strong>Email :</strong> mousquetaires.footus@mail.com</p>
+      <p><strong>Adresse :</strong> Stade Jean Longuet, Châtenay-Malabry</p>
+    </div>
+
+    <!-- Réseaux sociaux -->
+    <div class="contact-card">
+      <h3>🌍 Retrouvez-nous</h3>
+      <div class="social-links">
+        <a href="https://www.facebook.com/mousfootus/?locale=fr_FR" target="_blank">
+          <i class="fab fa-facebook"></i> 
+        </a>
+        <a href="https://www.instagram.com/mousquetairesfootus/?hl=fr" target="_blank">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Google Maps -->
+    <div class="contact-card">
+      <h3>📍 Localisation</h3>
+      <div class="map-container">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5259.818395793304!2d2.267659359431484!3d48.76453030614987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e679e25e112069%3A0x342506e186ea8106!2sStade%20de%20Ch%C3%A2tenay-Malabry!5e0!3m2!1sfr!2sfr!4v1761945612178!5m2!1sfr!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>" 
+          allowfullscreen="" loading="lazy">
+        </iframe>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Les Mousquetaires | <a href="#">Mentions légales</a></p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calendrier - Les Mousquetaires</title>
+  <style>
+    /* Reset global */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      color: #333;
+      background-image: url("4.jpg");
+      background-size: cover;
+      background-position: center 50%;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      position: relative;
+      z-index: 0;
+    }
+
+    /* Voile blanc pour lisibilité */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(255,255,255,0.6);
+      z-index: -1;
+    }
+
+    /* Header */
+    header {
+      background-color: #003366;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    header h1 { font-size: 3em; margin: 0; }
+
+  /* Navigation */
+
+    nav {
+  background-color: #ffcc00; /* Jaune */
+  text-align: center;
+  padding: 0;               /* on enlève les variations */
+  margin: 0;                /* on force à rester collé */
+  height: 60px;             /* même hauteur partout */
+  line-height: 60px;        /* centre verticalement */
+}
+
+nav a {
+  color: #003366; /* Bleu navy */
+  text-decoration: none;
+  padding: 0 20px;          /* espace entre les liens */
+  font-size: 1.1em;
+  font-weight: bold;
+  display: inline-block;
+  height: 100%;             /* occupe toute la bande */
+}
+
+nav a:hover {
+  background-color: #003366;
+  color: #ffcc00;
+}
+    /* Hero */
+    .hero {
+      text-align: center;
+      padding: 120px 20px;
+      color: white;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+      background: rgba(0,0,0,0.4);
+    }
+    .hero h2 { font-size: 3.5em; margin: 0 0 20px; text-transform: uppercase; }
+
+    /* Section calendrier */
+    .section {
+      max-width: 1100px;
+      margin: 50px auto;
+      padding: 0 20px;
+      text-align: center;
+    }
+    .section h2 {
+      font-size: 2em;
+      color: #003366;
+      margin-bottom: 30px;
+      border-bottom: 3px solid #ffcc00;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+
+    .event-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .event-card {
+      background: rgba(255,255,255,0.85);
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      width: 280px;
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .event-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+    }
+    .event-card h3 { color: #003366; margin-bottom: 10px; }
+    .event-card p { margin: 6px 0; }
+    .event-card .result {
+      font-weight: bold;
+      color: #ffcc00;
+      font-size: 1.2em;
+      margin-top: 10px;
+    }
+
+    /* Section recrutement */
+    .join-section {
+      background: #003366; color: white;
+      text-align: center; padding: 40px 20px;
+      margin-top: 40px;
+    }
+    .join-section h2 { font-size: 2em; margin-bottom: 15px; }
+    .cta-button {
+      background: #ffcc00; color: #003366;
+      padding: 12px 25px; text-decoration: none;
+      font-weight: bold; border-radius: 5px;
+      display: inline-block; margin-top: 15px;
+      transition: 0.3s;
+    }
+    .cta-button:hover { background: #ffaa00; transform: translateY(-3px); }
+
+    /* Footer */
+    footer {
+      background: #003366;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 50px;
+    }
+    footer a { color: #ffcc00; text-decoration: none; }
+
+    .team-logo {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.summary-button {
+  background: #003366;
+  color: white;
+  padding: 8px 15px;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 10px;
+  border-radius: 5px;
+  transition: 0.3s;
+  font-size: 0.9em;
+}
+
+.summary-button:hover {
+  background: #ffcc00;
+  color: #003366;
+}
+
+/* Couleurs des résultats */
+.result {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.result.win {
+  color: #2ecc71; /* vert */
+}
+
+.result.loss {
+  color: #e74c3c; /* rouge */
+}
+
+.result.pending {
+  color: #ffcc00; /* jaune */
+}
+
+
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>Les Mousquetaires</h1>
+  </header>
+
+  <!-- Navigation -->
+<nav>
+    <a href="ACCUEIL MOUS.html">Accueil</a> 
+    <a href="A PROPOS MOUS.html">À propos</a>
+    <a href="EQUIPES.html">Équipe</a>
+    <a href="CALENDRIER.html">Calendrier</a>
+    <a href="NOUS REJOINDRE.html">Nous rejoindre</a>
+    <a href="BOUTIQUE.html">Boutique</a>
+    <a href="CONTACT.html">Contact</a>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h2>NOS MATCHS</h2>
+  </section>
+
+
+  <!-- Calendrier -->
+<section class="section">
+
+  <div class="event-grid">
+
+    <!-- Match 1 -->
+    <div class="event-card">
+      <img src="cobras.jpg" alt="Cobras de Paris" class="team-logo">
+      <h3>Match 1 - vs Cobras de Paris</h3>
+      <p><strong>Date :</strong> 16 novembre 2025 - 14:00</p>
+      <p><strong>Lieu :</strong> Stade Jean Longuet, Châtenay-Malabry</p>
+      <p class="result pending">Résultat : -</p>
+    </div>
+
+    <!-- Match 2 -->
+    <div class="event-card">
+      <img src="saints.jpg" alt="Saints" class="team-logo">
+      <h3>Match 2 - vs Saints de Marne la Vallée</h3>
+      <p><strong>Date :</strong> 30 novembre 2025 - 14:00</p>
+      <p><strong>Lieu :</strong> Stade Jean Longuet, Châtenay-Malabry</p>
+      <p class="result pending">Résultat : -</p>
+      </div>
+
+    <!-- Match 3 -->
+    <div class="event-card">
+      <img src="meteo.jpg" alt="Météores" class="team-logo">
+      <h3>Match 3 - @ Météores Fontenay-sous-Bois</h3>
+      <p><strong>Date :</strong> 14 décembre 2025 - 14:00</p>
+      <p><strong>Lieu :</strong> Stade André Laurent, Fontenay-sous-Bois</p>
+      <p class="result pending">Résultat : -</p>
+    </div>
+
+    <!-- Match 4 -->
+    <div class="event-card">
+      <img src="bucks.jpg" alt="Bucks" class="team-logo">
+      <h3>Match 4 - vs Bucks de Boran sur Oise</h3>
+      <p><strong>Date :</strong> 18 janvier 2026 - 14:00</p>
+      <p><strong>Lieu :</strong> Stade Jean Longuet, Châtenay-Malabry</p>
+      <p class="result pending">Résultat : -</p>
+    </div>
+
+    <!-- Match 5 -->
+    <div class="event-card">
+      <img src="chevalier.jpg" alt="Chevalier" class="team-logo">
+      <h3>Match 5 - @ Chevalier d'Orléans</h3>
+      <p><strong>Date :</strong> 31 janvier 2026 - 14:00</p>
+      <p><strong>Lieu :</strong> Orléans</p>
+      <p class="result pending">Résultat : -</p>
+    </div>
+
+    <!-- Match 6 -->
+    <div class="event-card">
+      <img src="meteo.jpg" alt="Équipe" class="team-logo">
+      <h3>Match 6 - vs Météores Fontenay-sous-Bois </h3>
+      <p><strong>Date :</strong> 22 février 2026 - 14:00</p>
+      <p><strong>Lieu :</strong> Stade Jean Longuet, Châtenay-Malabry</p>
+      <p class="result pending">Résultat : -</p>
+    </div>
+
+    <!-- Match 7 -->
+    <div class="event-card">
+      <img src="saints.jpg" alt="Équipe" class="team-logo">
+      <h3>Match 7 - @ Saints de Marne la Vallée</h3>
+      <p><strong>Date :</strong> 14 mars 2026 - 14:00</p>
+      <p><strong>Lieu :</strong> Stade des peupliers, Magny-le-Hongre</p>
+      <p class="result pending">Résultat : -</p>
+    </div>
+
+    <!-- Match 8 -->
+    <div class="event-card">
+      <img src="cobras.jpg" alt="Équipe" class="team-logo">
+      <h3>Match 8 - @ Cobras de Paris</h3>
+      <p><strong>Date :</strong> 28 mars 2026 - 14:00</p>
+      <p><strong>Lieu :</strong> Paris</p>
+      <p class="result pending">Résultat : -</p>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Les Mousquetaires | <a href="#">Mentions légales</a></p>
+  </footer>
+
+</body>
+</html>

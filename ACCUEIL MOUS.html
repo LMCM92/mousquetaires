@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accueil - Les Mousquetaires</title>
+  <style>
+
+/* Reset global */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.plus-btn:hover {
+  background: #ffaa00;
+  transform: scale(1.1) rotate(10deg);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+
+  /* Image en fond */
+  background-image: url("11.jpg");
+  background-size: cover;          /* couvre toute la page */
+  background-position: center 20%; /* décale vers le haut pour voir la tête */
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: #333;
+  position: relative;
+  z-index: 0;
+}
+
+/* Voile transparent pour lisibilité */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(255,255,255,0.6);
+  z-index: -1;
+}
+
+
+
+/* Header */
+header {
+  background-color: rgba(0,51,102,0.9); /* Navy semi-transparent */
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+header h1 { font-size: 3em; margin: 0; }
+
+/* Navigation */
+nav {
+  background-color: rgba(255,204,0,0.95); /* Jaune semi-transparent */
+  text-align: center;
+  height: 60px;
+  line-height: 60px;
+}
+nav a {
+  color: #003366;
+  text-decoration: none;
+  padding: 0 20px;
+  font-size: 1.1em;
+  font-weight: bold;
+  display: inline-block;
+  height: 100%;
+}
+nav a:hover {
+  background-color: #003366;
+  color: #ffcc00;
+}
+
+/* Hero */
+.hero {
+  text-align: center;
+  padding: 120px 20px;
+  color: white;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+  background: rgba(0,0,0,0.4); /* Assombrit légèrement pour contraste */
+}
+.hero h2 { font-size: 3.5em; margin: 0 0 20px; text-transform: uppercase; }
+.hero p { font-size: 1.3em; margin-bottom: 40px; }
+.cta-button {
+  background-color: #ffcc00;
+  color: #003366;
+  padding: 15px 40px;
+  font-size: 1.2em;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+  display: inline-block;
+  transition: 0.3s;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+.cta-button:hover { background-color: #ffaa00; transform: translateY(-3px); }
+
+/* Section */
+.section {
+  max-width: 1100px;
+  margin: 50px auto;
+  padding: 20px;
+  text-align: center;
+  background: rgba(255,255,255,0.8); /* Fond clair semi-transparent */
+  border-radius: 10px;
+}
+.section h2 {
+  font-size: 2.2em;
+  color: #003366;
+  margin-bottom: 30px;
+}
+
+/* Cards */
+.card-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+.card {
+  background: rgba(255,255,255,0.9);
+  width: 280px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+.card:hover { transform: translateY(-5px); }
+.card h3 { color: #003366; margin-bottom: 10px; }
+.card a {
+  display: inline-block;
+  margin-top: 10px;
+  color: #ffcc00;
+  font-weight: bold;
+  text-decoration: none;
+}
+.card a:hover { color: #ffaa00; }
+
+/* Footer */
+footer {
+  background-color: rgba(0,51,102,0.9);
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 50px;
+}
+footer a { color: #ffcc00; text-decoration: none; }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>Les Mousquetaires</h1>
+  </header>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="ACCUEIL MOUS.html">Accueil</a> 
+    <a href="A PROPOS MOUS.html">À propos</a>
+    <a href="EQUIPES.html">Équipe</a>
+    <a href="CALENDRIER.html">Calendrier</a>
+    <a href="NOUS REJOINDRE.html">Nous rejoindre</a>
+    <a href="BOUTIQUE.html">Boutique</a>
+    <a href="CONTACT.html">Contact</a>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h2>Rejoignez les Mousquetaires</h2>
+    <p>Club ambitieux de football américain à Châtenay-Malabry</p>
+  </section>
+
+  <!-- Section Équipe -->
+  <section class="section">
+    <h2>Notre équipe</h2>
+    <div class="card-grid">
+      <div class="card">
+        <h3>Les Seniors</h3>
+        <p>Une équipe expérimentée et ambitieuse prête à relever tous les défis.</p>
+        <a href="EQUIPES.html">Voir l'équipe</a>
+      </div>
+      <div class="card">
+        <h3>Les Jeunes</h3>
+        <p>Nos U15 et U18, la relève du club et des futurs champions.</p>
+        <a href="EQUIPES.html">Voir l'équipe</a>
+      </div>
+       <a href="EQUIPES.html" class="more-btn">voir plus</a>
+    </div>
+  </section>
+
+  <!-- Section Événements -->
+  <section class="section">
+    <h2>Événements à venir</h2>
+    <div class="card-grid">
+      <div class="card">
+         <h3>Match 1 - vs Cobras de Paris</h3>
+            <p><strong>Date :</strong> 16 novembre 2025 - 14:00</p>
+      </div>
+      <div class="card">
+     <h3>Match 2 - vs Saints de Marne la Vallée</h3>
+            <p><strong>Date :</strong> 30 novembre 2025 - 14:00</p>
+      </div>
+      <div class="card">
+        <h3>Match 3 - @ Météores Fontenay-sous-Bois</h3>
+            <p><strong>Date :</strong> 14 décembre 2025 - 14:00</p>
+      </div>
+      <a href="CALENDRIER.html" class="more-btn">voir plus</a>
+
+    </div>
+  </section>
+
+  <!-- Section Recrutement -->
+  <section class="section">
+    <h2>Rejoignez le club</h2>
+    <div class="card-grid">
+      <div class="card">
+        <h3>Joueurs</h3>
+        <p>Débutant ou expérimenté, toutes les catégories sont ouvertes.</p>
+        <a href="NOUS REJOINDRE.html">Postuler</a>
+      </div>
+      <div class="card">
+        <h3>Coachs & Arbitres</h3>
+        <p>Participez au développement du club et encadrez nos équipes.</p>
+        <a href="NOUS REJOINDRE.html">Postuler</a>
+      </div>
+       <a href="NOUS REJOINDRE.html" class="more-btn">voir plus</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Les Mousquetaires | <a href="#">Mentions légales</a></p>
+  </footer>
+<a href="CALENDRIER.html" class="plus-btn"> plus</a>
+
+</body>
+</html>
