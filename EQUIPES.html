@@ -157,7 +157,73 @@ nav a:hover {
       text-align: center; padding: 20px; margin-top: 50px;
     }
     footer a { color: #ffcc00; text-decoration: none; }
+
+    /* Onglets Senior / U18 */
+.tabs-container {
+  max-width: 1200px;
+  margin: 0 auto 40px;
+  text-align: center;
+}
+
+.tabs-container input {
+  display: none;
+}
+
+.tabs-container label {
+  display: inline-block;
+  padding: 12px 30px;
+  margin: 0 5px;
+  background: #ffcc00;
+  color: #003366;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 8px 8px 0 0;
+  transition: 0.3s;
+}
+
+.tabs-container label:hover {
+  background: #ffaa00;
+}
+
+#tab-senior:checked + label,
+#tab-u18:checked + label,
+#tab-coach:checked + label {
+  background: #003366;
+  color: #ffcc00;
+}
+
+.tab-content {
+  display: none;
+  margin-top: 30px;
+}
+
+/* Affichage conditionnel */
+#tab-senior:checked ~ #content-senior {
+  display: block;
+}
+#tab-u18:checked ~ #content-u18 {
+  display: block;
+}
+#tab-coach:checked ~ #content-coach {
+  display: block;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
   </style>
+
 </head>
 <body>
 
@@ -165,7 +231,7 @@ nav a:hover {
   <header>
     <h1>Les Mousquetaires</h1>
   </header>
-
+<main>
   <!-- Navigation -->
   <nav>
     <a href="index.html">Accueil</a> 
@@ -179,27 +245,34 @@ nav a:hover {
 
   <!-- Hero -->
   <section class="hero">
-    <h2>NOS JOUEURS</h2>
+    <h2>NOS EFFECTIFS</h2>
   </section>
 
-   <!-- Quarterbacks -->
+  <!-- Onglets effectif -->
+<div class="tabs-container">
+
+  <input type="radio" name="tabs" id="tab-senior" checked>
+  <label for="tab-senior">Sénior</label>
+
+  <input type="radio" name="tabs" id="tab-u18">
+  <label for="tab-u18">U18</label>
+
+  <input type="radio" name="tabs" id="tab-coach">
+  <label for="tab-coach">Coach</label>
+
+  <!-- CONTENU SENIOR -->
+  <div class="tab-content" id="content-senior">
+    <!-- TOUT ton effectif actuel (QB, RB, WR, etc) -->
+       <!-- Quarterbacks -->
   <section class="position">
     <h2>Quarterbacks</h2>
     <div class="team-container">
       <div class="player-card">
-        <img src="roster/10.jpg" alt="QB 1">
+        <img src="roster/" alt="QB 1">
         <h3>DAVID Victor</h3>
         <ul>
           <li><strong>Taille :</strong> 1m81</li>
           <li><strong>Poids :</strong> 70 kg</li>
-        </ul>
-      </div>
-      <div class="player-card">
-        <img src="rb1.jpg" alt="QB 2">
-        <h3>LECAMP Clément</h3>
-        <ul>
-          <li><strong>Taille :</strong> 1m73</li>
-          <li><strong>Poids :</strong> 65 kg</li>
         </ul>
       </div>
     </div>
@@ -234,11 +307,11 @@ nav a:hover {
         </ul>
       </div>
       <div class="player-card">
-        <img src="rb1.jpg" alt="RB 3">
-        <h3>COULANGE Melvin</h3>
+        <img src="" alt="RB 2">
+        <h3>CHARLES Henri</h3>
         <ul>
           <li><strong>Taille :</strong> 1m75</li>
-          <li><strong>Poids :</strong> 60 kg</li>
+          <li><strong>Poids :</strong> 76 kg</li>
         </ul>
       </div>
     </div>
@@ -268,8 +341,8 @@ nav a:hover {
         <img src="roster/9.jpg" alt="WR 2">
         <h3>DE FORCADE Basile</h3>
         <ul>
-          <li><strong>Taille :</strong> 2m00 </li>
-          <li><strong>Poids :</strong> 97 kg </li>
+          <li><strong>Taille :</strong> </li>
+          <li><strong>Poids :</strong> </li>
         </ul>
       </div>
       <div class="player-card">
@@ -318,14 +391,6 @@ nav a:hover {
         <ul>
           <li><strong>Taille :</strong> 1m81</li>
           <li><strong>Poids :</strong> 80 kg</li>
-        </ul>
-      </div>
-      <div class="player-card">
-        <img src="wr2.jpg" alt="WR 2">
-        <h3>LEE Sung-Min</h3>
-        <ul>
-          <li><strong>Taille :</strong> 1m73</li>
-          <li><strong>Poids :</strong> 65 kg</li>
         </ul>
       </div>
     </div>
@@ -571,30 +636,95 @@ nav a:hover {
           <li><strong>Poids :</strong> 90 kg</li>
         </ul>
       </div>
+      <div class="player-card">
+        <img src="" alt="Défenseur 1">
+        <h3>NICY Michal Mathieu</h3>
+        <ul>
+          <li><strong>Taille :</strong> 1m88</li>
+          <li><strong>Poids :</strong> 85 kg</li>
+        </ul>
+      </div>
     </div>
   </section>
 
-  <!-- Coach -->
+  </div>
+
+  <!-- CONTENU U18 -->
+  <div class="tab-content" id="content-u18">
+             
+      <!-- Quarterbacks -->
+<section class="position">
+    <h2>Quarterbacks</h2>
+  <div class="team-container">
+   <div class="player-card">
+        <img src="rb1.jpg" alt="QB 2">
+        <h3>LECAMP Clément</h3>
+        <ul>
+          <li><strong>Taille :</strong> 1m73</li>
+          <li><strong>Poids :</strong> 65 kg</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Running Backs -->
   <section class="position">
-    <h2>Coach</h2>
+    <h2>Running Backs</h2>
+    <div class="team-container">
+      <div class="player-card">
+        <img src="rb1.jpg" alt="RB 3">
+        <h3>COULANGE Melvin</h3>
+        <ul>
+          <li><strong>Taille :</strong> 1m75</li>
+          <li><strong>Poids :</strong> 60 kg</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Receveurs -->
+  <section class="position">
+    <h2>Receveurs</h2>
+    <div class="team-container">
+      <div class="player-card">
+        <img src="wr2.jpg" alt="WR 2">
+        <h3>LEE Sung-Min</h3>
+        <ul>
+          <li><strong>Taille :</strong> 1m73</li>
+          <li><strong>Poids :</strong> 65 kg</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  </div>
+
+  <!-- CONTENU Coach -->
+  <div class="tab-content" id="content-coach">
+
+    <!-- Effectif Coach -->
+     <section class="position">
     <div class="team-container">
       <div class="player-card">
         <img src="roster/ZO.jpg" alt="Défenseur 1">
         <h3>NELSON Joel</h3>
         <ul>
-          <li></strong>Head Coach / Coach defense</li>
+          <li>Head Coach / Coach defense</li>
         </ul>
       </div>
       <div class="player-card">
         <img src="roster/duncan.jpg" alt="Défenseur 1">
         <h3>THIRIEZ Duncan</h3>
         <ul>
-          <li></strong>Coach offense</li>
+          <li>Coach defense</li>
         </ul>
       </div>
     </div>
   </section>
+  </div>
 
+</div>
+</main>
 
   <!-- Footer -->
   <footer>
@@ -604,20 +734,6 @@ nav a:hover {
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
